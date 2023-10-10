@@ -1,0 +1,97 @@
+2023-10-09T15:25:56+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: string + string in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php:106
+Stack trace:
+#0 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\controls-stack.php(2265): Elementor_Test_Widget->render()
+#1 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\widget-base.php(733): Elementor\Widget_Base->render_content()
+#3 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\element-base.php(551): Elementor\Widget_Base->get_raw_data(true)
+#4 C:\wamp64\www\app1\wp-content\plugins\elementor\core\base\document.php(1013): Elementor\Element_Base->get_raw_data(true)
+#5 C:\wamp64\www\app1\wp-content\plugins\elementor\core\base\document.php(679): Elementor\Core\Base\Document->get_elements_raw_data(Array, true)
+#6 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\controls-stack.php(1010): Elementor\Core\Base\Document->get_initial_config()
+#7 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\common\editor-common-scripts-settings.php(33): Elementor\Controls_Stack->get_config()
+#8 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\v1\editor-v1-loader.php(76): Elementor\Core\Editor\Loader\Common\Editor_Common_Scripts_Settings::get()
+#9 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\editor.php(358): Elementor\Core\Editor\Loader\V1\Editor_V1_Loader->enqueue_scripts()
+#10 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): Elementor\Core\Editor\Editor->enqueue_scripts('')
+#11 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#12 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\wamp64\www\app1\wp-includes\script-loader.php(2225): do_action('wp_enqueue_scri...')
+#14 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): wp_enqueue_scripts('')
+#15 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#16 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#17 C:\wamp64\www\app1\wp-includes\general-template.php(3053): do_action('wp_head')
+#18 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\editor-templates\editor-wrapper.php(31): wp_head()
+#19 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\v1\editor-v1-loader.php(110): include('C:\\wamp64\\www\\a...')
+#20 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\editor.php(163): Elementor\Core\Editor\Loader\V1\Editor_V1_Loader->print_root_template()
+#21 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): Elementor\Core\Editor\Editor->init('')
+#22 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#23 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#24 C:\wamp64\www\app1\wp-admin\admin.php(419): do_action('admin_action_el...')
+#25 C:\wamp64\www\app1\wp-admin\post.php(12): require_once('C:\\wamp64\\www\\a...')
+#26 {main}
+  thrown in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php on line 106
+
+2023-10-09T15:56:21+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: string + string in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php:106
+Stack trace:
+#0 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\controls-stack.php(2265): Elementor_Test_Widget->render()
+#1 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\widget-base.php(733): Elementor\Widget_Base->render_content()
+#3 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\element-base.php(551): Elementor\Widget_Base->get_raw_data(true)
+#4 C:\wamp64\www\app1\wp-content\plugins\elementor\core\base\document.php(1013): Elementor\Element_Base->get_raw_data(true)
+#5 C:\wamp64\www\app1\wp-content\plugins\elementor\core\base\document.php(679): Elementor\Core\Base\Document->get_elements_raw_data(Array, true)
+#6 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\controls-stack.php(1010): Elementor\Core\Base\Document->get_initial_config()
+#7 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\common\editor-common-scripts-settings.php(33): Elementor\Controls_Stack->get_config()
+#8 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\v1\editor-v1-loader.php(76): Elementor\Core\Editor\Loader\Common\Editor_Common_Scripts_Settings::get()
+#9 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\editor.php(358): Elementor\Core\Editor\Loader\V1\Editor_V1_Loader->enqueue_scripts()
+#10 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): Elementor\Core\Editor\Editor->enqueue_scripts('')
+#11 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#12 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\wamp64\www\app1\wp-includes\script-loader.php(2225): do_action('wp_enqueue_scri...')
+#14 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): wp_enqueue_scripts('')
+#15 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#16 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#17 C:\wamp64\www\app1\wp-includes\general-template.php(3053): do_action('wp_head')
+#18 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\editor-templates\editor-wrapper.php(31): wp_head()
+#19 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\v1\editor-v1-loader.php(110): include('C:\\wamp64\\www\\a...')
+#20 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\editor.php(163): Elementor\Core\Editor\Loader\V1\Editor_V1_Loader->print_root_template()
+#21 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): Elementor\Core\Editor\Editor->init('')
+#22 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#23 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#24 C:\wamp64\www\app1\wp-admin\admin.php(419): do_action('admin_action_el...')
+#25 C:\wamp64\www\app1\wp-admin\post.php(12): require_once('C:\\wamp64\\www\\a...')
+#26 {main}
+  thrown in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php on line 106
+
+2023-10-09T15:56:45+00:00 CRITICAL syntax error, unexpected token ">" in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php on line 104
+
+2023-10-09T15:57:07+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: string + string in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php:107
+Stack trace:
+#0 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\controls-stack.php(2265): Elementor_Test_Widget->render()
+#1 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\widget-base.php(733): Elementor\Widget_Base->render_content()
+#3 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\element-base.php(551): Elementor\Widget_Base->get_raw_data(true)
+#4 C:\wamp64\www\app1\wp-content\plugins\elementor\core\base\document.php(1013): Elementor\Element_Base->get_raw_data(true)
+#5 C:\wamp64\www\app1\wp-content\plugins\elementor\core\base\document.php(679): Elementor\Core\Base\Document->get_elements_raw_data(Array, true)
+#6 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\base\controls-stack.php(1010): Elementor\Core\Base\Document->get_initial_config()
+#7 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\common\editor-common-scripts-settings.php(33): Elementor\Controls_Stack->get_config()
+#8 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\v1\editor-v1-loader.php(76): Elementor\Core\Editor\Loader\Common\Editor_Common_Scripts_Settings::get()
+#9 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\editor.php(358): Elementor\Core\Editor\Loader\V1\Editor_V1_Loader->enqueue_scripts()
+#10 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): Elementor\Core\Editor\Editor->enqueue_scripts('')
+#11 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#12 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\wamp64\www\app1\wp-includes\script-loader.php(2225): do_action('wp_enqueue_scri...')
+#14 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): wp_enqueue_scripts('')
+#15 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#16 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#17 C:\wamp64\www\app1\wp-includes\general-template.php(3053): do_action('wp_head')
+#18 C:\wamp64\www\app1\wp-content\plugins\elementor\includes\editor-templates\editor-wrapper.php(31): wp_head()
+#19 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\loader\v1\editor-v1-loader.php(110): include('C:\\wamp64\\www\\a...')
+#20 C:\wamp64\www\app1\wp-content\plugins\elementor\core\editor\editor.php(163): Elementor\Core\Editor\Loader\V1\Editor_V1_Loader->print_root_template()
+#21 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(310): Elementor\Core\Editor\Editor->init('')
+#22 C:\wamp64\www\app1\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#23 C:\wamp64\www\app1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#24 C:\wamp64\www\app1\wp-admin\admin.php(419): do_action('admin_action_el...')
+#25 C:\wamp64\www\app1\wp-admin\post.php(12): require_once('C:\\wamp64\\www\\a...')
+#26 {main}
+  thrown in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php on line 107
+
+2023-10-09T23:54:42+00:00 CRITICAL syntax error, unexpected token "." in C:\wamp64\www\app1\wp-content\themes\hello-elementor\widgets\widget-1.php on line 154
+
