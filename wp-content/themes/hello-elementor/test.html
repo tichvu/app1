@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popup Example</title>
+    <!-- Include Backbone.js and Underscore.js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+</head>
+<body>
+    <!-- Trigger button to open the popup -->
+    <button id="open-popup-button">Open Popup</button>
+
+    <!-- Container for the popup -->
+    <div id="popup-container" style="display: none;"></div>
+
+    <script>
+        // Backbone View for the popup
+        var PopupView = Backbone.View.extend({
+            el: '#popup-container',
+
+            template: _.template(`
+                <div id="popup">
+                    <h2>Product Details</h2>
+                    <form id="product-form">
+                        <label for="product-name">Product Name:</label>
+                        <input type="text" id="product-name" name="product-name" required><br>
+                        <label for="product-price">Product Price:</label>
+                        <input type="text" id="product-price" name="product-price" required><br>
+                        <button type="submit">OK</button>
+                    </form>
+                </div>
+            `),
+
+            events: {
+                'submit #product-form': 'onFormSubmit'
+            },
+
+            initialize: function() {
+                this.render();
+            },
+
+            render: function() {
+                this.$el.html(this.template());
+                return this;
+            },
+
+            onFormSubmit: function(event) {
+                event.preventDefault();
+                var productName = this.$('#product-name').val();
+                var productPrice = this.$('#product-price').val();
+
+                // Handle form submission here.
+                console.log('Product Name:', productName);
+                console.log('Product Price:', productPrice);
+
+                // Close the popup.
+                this.hideModal();
+            },
+
+            showModal: function() {
+                // Show the popup. You can use CSS for styling and positioning.
+                this.$el.show();
+            },
+
+            hideModal: function() {
+                // Hide the popup.
+                this.$el.hide();
+            }
+        });
+        // Debug: Log a message to check if the PopupView is instantiated.
+        console.log('PopupView instantiated:', popupView);
+        // Instantiate the PopupView
+        var popupView = new PopupView();
+
+        // Open the popup when the button is clicked
+        document.getElementById('open-popup-button').addEventListener('click', function() {
+            popupView.showModal();
+        });
+    </script>
+</body>
+</html>

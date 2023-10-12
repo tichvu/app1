@@ -260,3 +260,20 @@ function enqueue_custom_widget_script() {
 	wp_enqueue_script('custom-widget-script', get_template_directory_uri() . '/js/custom-widget-script.js', array('jquery'), '1.0', true);
 }
 add_action('elementor/frontend/after_enqueue_scripts', 'enqueue_custom_widget_script');
+
+
+
+
+
+// function remove_element_in_frontend($element) {
+//     // Check the type of the Elementor element (e.g., 'section', 'column', or 'widget')
+//     $element_type = $element->get_type();
+// 	echo $element;
+//     // Identify the element you want to remove based on its unique ID or other criteria
+//     if ($element_type === 'widget' && $element->get_id() === 'widget_create_product') {
+//         // Remove the element
+//         $element->get_elements_manager()->remove_element($element->get_id());
+//     }
+// }
+// // Add the action to remove an element in the frontend
+// add_action('elementor/frontend/element/before_render', 'remove_element_in_frontend');

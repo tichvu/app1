@@ -27,13 +27,13 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 
     protected function register_controls() {
 
-		// $this->start_controls_section(
-		// 	'content_section',
-		// 	[
-		// 		'label' => esc_html__( 'Content', 'textdomain' ),
-		// 		'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-		// 	]
-		// );
+		$this->start_controls_section(
+			'content_section',
+			[
+				'label' => esc_html__( 'Content', 'textdomain' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
 
         // $args = array(
         //     'post_type'      => 'product',
@@ -50,14 +50,13 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 
         // wp_reset_query();
 
-		// $this->add_control(
-		// 	'title',
-		// 	[
-		// 		'type' => \Elementor\Controls_Manager::TEXT,
-		// 		'label' => esc_html__( 'Title', 'textdomain' ),
-		// 		'placeholder' => esc_html__( 'Enter your title', 'textdomain' ),
-		// 	]
-		// );
+		$this->add_control(
+			'product-id',
+			[
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label' => esc_html__( 'product-id', 'textdomain' ),
+			]
+		);
 
         // $this->add_control(
 		// 	'product',
@@ -71,7 +70,7 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 
 
         
-		// $this->end_controls_section();
+		 $this->end_controls_section();
 
 	}
     // protected function render() {
@@ -85,31 +84,38 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 	// }
 
 	// PHP render
+	
 	protected function render() {
-        // Render the widget content here.
-        $settings = $this->get_settings_for_display();
+		//return '';
 
-        // Output the button that triggers the popup.
-        echo '<button id="custom-widget-popup-button">Open Popup</button>';
+		$settings = $this->get_settings_for_display();
 
-        // Output JavaScript to trigger the popup immediately.
-        echo '<script>
-            jQuery(document).ready(function($) {
-				//var model = new ProductModel();
-				//var view = new AddProductView( {model:model});
-				//view.render().showModal({]});
+		$this->add_inline_editing_attributes( 'product-id', 'none' );
+		//echo $settings['product-id'];
+		$_product = wc_get_product( $settings['product-id']);
+		if (is_a($_product, 'WC_Product')) {
+			?>
+				<h3>Product Name: <?php echo $_product->get_name(); ?></h3>
+				<h3>Product Price: $<?php echo $_product->get_price(); ?></h3>
+			<?php
+		}
 
-                //$(\'#custom-widget-popup-button\').on(\'click\', function() {
-				//	alert(\'hello there\');
-				//});
-
-			});
-        </script>';
     }
 
 	// JS render
-	public function _content_template() {
-        // Define the content template for the widget (optional).
+	
+	public function content_template() {
+		return '';
+		/*
+		?>
+		<#
+		view.addInlineEditingAttributes( 'product-id', 'none' );
+		#>
+		<h2 {{{ view.getRenderAttributeString( 'product-id' ) }}}>{{{ settings.product-id }}}</h2>
+		<?php
+		*/
     }
 	
 }
+
+

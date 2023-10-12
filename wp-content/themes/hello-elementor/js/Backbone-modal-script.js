@@ -1,17 +1,19 @@
 ProductModel = Backbone.Model.extend(
 	{
+		defaults: {
+			id: 0,
+			name: '',
+			price: 0,
+			dragged: 0
+		},
 		validation:
 		{
 			name: {required:true, msg: "Please enter the product's name."},
 			price: {required:true, msg: "Please enter the product's price."}
 		}
 	});
-	
-PeopleCollection = Backbone.Collection.extend(
-	{
-		model: ProductModel
-	});
 
+var createdProduct = new ProductModel();
     AddProductView = Backbone.ModalView.extend(
 	{
 		name: "AddProductView",
@@ -83,16 +85,16 @@ PeopleCollection = Backbone.Collection.extend(
 				
 				if( this.model.set( this.getCurrentFormValues()))
 				{
-					this.hideModal();
 					//_people.add( this.model);
                     // Start - Call Woocommerce api here to add new product
                     // Create a data object with product details
-                    console.log(this.model);
+
                     var data = {
                         name: this.model.attributes.name,
                         regular_price: this.model.attributes.price
                     };
 
+					var self = this; 
                     //Make a POST request to the WooCommerce REST API to create the product
                     jQuery.ajax({
                         url: 'https://localhost/app1/wp-json/wc/v3/products',
@@ -104,15 +106,23 @@ PeopleCollection = Backbone.Collection.extend(
                         success: function(response) {
                             alert('Product created successfully!');
                             // You can optionally redirect the user or perform other actions after product creation.
+							console.log('productID: ' + response.id);
+							self.model.set('id', response.id);
+							createdProduct.set(self.model);
+							self.hideModal();
                         },
                         error: function(error) {
                             console.log('Error:', error);
                             alert('Product creation failed.');
+							self.hideModal();
                         }
                     });
+					
                     
 
 				}
+				// remove empty widget widget_create_product widget-empty
+				jQuery('.elementor-widget-widget_create_product.elementor-widget-empty').parent().parent().remove();
 			},
 			
 		render:
